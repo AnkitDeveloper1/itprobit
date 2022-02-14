@@ -1,0 +1,52 @@
+[
+    {
+        "_id": "1",
+        "title": "Internet of Things (Iot)",
+        "content": "These are web-empowered gadgets that utilize inserted processors, sensors and",
+        "featured_image": "/images/new/cover.jpg",
+        "added_on": "29 April, 2019",
+        "tags": [
+            "IOT", "Retail & ECommerce", "Health & Fitness", "Automation of Vehicles"
+        ]
+    },
+    {
+        "_id": "2",
+        "title": "Chatbots Healthcare",
+        "content": "With AI influencing all the sectors of our society Healthcare cannot remain untouched",
+        "featured_image": "/images/video_bg.jpg",
+        "added_on": "29 April, 2019",
+        "tags": [
+            "IOT", "Retail & ECommerce", "Health & Fitness", "Automation of Vehicles"
+        ]
+    },
+    {
+        "_id": "3",
+        "title": "Machine Learning",
+        "content": "These are web-empowered gadgets that utilize inserted processors, sensors and",
+        "featured_image": "/images/new/design.png",
+        "added_on": "29 April, 2019",
+        "tags": [
+            "IOT", "Retail & ECommerce", "Health & Fitness", "Automation of Vehicles"
+        ]
+    },
+    {
+        "_id": "4",
+        "title": "Mobile App Trends",
+        "content": "The number of Smartphone users worldwide, crossed 5.135 billion. With this ever so increasing Mobile usability",
+        "featured_image": "/images/video_bg.jpg",
+        "added_on": "29 April, 2019",
+        "tags": [
+            "IOT", "Retail & ECommerce", "Health & Fitness", "Automation of Vehicles"
+        ]
+    },
+    {
+        "_id": "5",
+        "title": "Cross Platform App Frameworks",
+        "content": "Cross platform app frameworks refer to a kind of software development",
+        "featured_image": "/images/video_bg.jpg",
+        "added_on": "02 May, 2019",
+        "tags": [
+            "IOT", "Retail & ECommerce", "Health & Fitness", "Automation of Vehicles"
+        ]
+    }
+]

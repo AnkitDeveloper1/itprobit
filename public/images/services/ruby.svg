@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.384 46.776">
+    <defs>
+        <style>
+            .cls-1{fill:#ca0813}
+        </style>
+    </defs>
+    <g id="ruby__dev" transform="translate(0 -.049)">
+        <path id="Combined_Shape" d="M23.838 34.771L0 0h15.326l8.514 34.77zm0-.005L32.355 0H47.68z" class="cls-1" data-name="Combined Shape" transform="translate(.851 11.205)"/>
+        <path id="Shape" d="M24.692 36.472a.85.85 0 0 1-.7-.37L.149 1.333A.851.851 0 0 1 .851 0h47.68a.851.851 0 0 1 .7 1.333L25.394 36.1a.85.85 0 0 1-.702.372zM2.468 1.7l22.224 32.415L46.915 1.7z" class="cls-1" transform="translate(0 10.353)"/>
+        <path id="Shape-2" d="M39.166 0H6.811L0 10.217h47.68z" class="cls-1" data-name="Shape" transform="translate(.851 1.225)"/>
+        <path id="Shape-3" d="M48.531 11.92H.851a.851.851 0 0 1-.708-1.32L6.954.379A.849.849 0 0 1 7.663 0h32.354a.851.851 0 0 1 .654.306l8.514 10.218a.851.851 0 0 1-.654 1.4zM8.118 1.7l-5.675 8.517h44.271L39.618 1.7h-31.5z" class="cls-1" data-name="Shape" transform="translate(0 .049)"/>
+        <path id="Shape-4" d="M8.514 0l8.514 10.217H0z" class="cls-1" data-name="Shape" transform="translate(16.177 1.225)"/>
+    </g>
+</svg>

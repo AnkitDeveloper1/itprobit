@@ -1,0 +1,134 @@
+[
+    {
+        "_id": "1",
+        "title": "Web-Based Human Resource Management System",
+        "content": "An easy-to-use web-resource for job hunting especially for young just graduated specialists. The web application allows searching, finding and meeting with potential hires or candidates, placing CVs or job opportunities. This web-based human resource management system provides quick and simple negotiation and interviewing between candidates and employers.",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#cb3091",
+        "url": "#",
+        "categories": [
+            "3", "6"
+        ]
+    },
+    {
+        "_id": "2",
+        "title": "Healthcare Research Platform",
+        "content": "Our client, a California-based healthcare technology company, provides pharmaceutical and other medical companies with an ePRO(electronic patient-reported outcome) platform. The platform allows organizations to conduct clinical trials among volunteers and patients testing drugs and diagnostic equipment.",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#0089a5",
+        "url": "#",
+        "categories": [
+            "2", "5", "6"
+        ]
+    },
+    {
+        "_id": "3",
+        "title": "Healthcare SAAS Solutions",
+        "content": "The client, a practicing Canadian physician, turned to Itprobit Tech looking for a technology solution to efficiently run his clinic. The goal was to build a Clinic Management System, able to handle appointments, patients&apos; files, and invoices. Managing multiple staff members, the client needed a powerful tool that could work with numerous users, different access permissions and safely store patient&apos;s data in private client portals.",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#5e30cb",
+        "url": "#",
+        "categories": [
+            "2", "6"
+        ]
+    },
+    {
+        "_id": "4",
+        "title": "Patent Research And Analysis Tool",
+        "content": "The client, is an Australian-based company, operating in the sphere of pharmaceutical industry and Patent Intelligence since 1999. The company&apos;s core product, Patent Intelligence system, provides rich database of pharmaceutical patents with the ability to search for specific information, structure it and visualize in a convenient way.",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#30cb30",
+        "url": "#",
+        "categories": [
+            "1", "4", "6"
+        ]
+    },
+    {
+        "_id": "5",
+        "title": "Employing State-Of-The-Art Machine Learning AND Data Science To Diagnose And Fight Bruxis",
+        "content": "Being a dentist and a serial entrepreneur, our client has been studying the teeth grinding problem (or so-called bruxism) and its impact on the patients&apos; health. Bruxism is known to have the prevalence rate of around 8% - 31% in the general population.",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#cb3052",
+        "url": "#",
+        "categories": [
+            "4", "6"
+        ]
+    },
+    {
+        "_id": "6",
+        "title": "Asset management solution using RFID",
+        "content": "1. Key objective was to reduce possibilities of manual /human error , reduce time and streamline preflights processes by End to end automation of pre-flight functions <br /> <br /> 2. An application that performed real time communications with back end data center was delivered as a solution.",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#cb3091",
+        "url": "#",
+        "categories": [
+            "1", "4", "6"
+        ]
+    },
+    {
+        "_id": "7",
+        "title": "Cross Platform Mobile Application Using React Native For IOT Devices",
+        "content": "The client is a Swiss company producing IoT devices for the retail industry. The client was in need of a technology solution that enables the end user to access the real time data from the Footfall Sensing System without any technical interventions.",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#309acb",
+        "url": "#",
+        "categories": [
+            "2", "5"
+        ]
+    },
+    {
+        "_id": "8",
+        "title": "Smart Card Production System",
+        "content": "One of Europe&apos;s largest and oldest smart card production companies with more than 600 successful projects under their belt. This company provides full range of card services with primary focus on production and printing of plastic cards. <br /> <br /> 1. For its electronic card production system there were various different stand-alone applications which could not be integrated with each other, leading to difficulty in managing work and sync it, resulting in increase process complexity and reduced efficiency.",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#cb8330",
+        "url": "#",
+        "categories": [
+            "1", "6"
+        ]
+    },
+    {
+        "_id": "9",
+        "title": "Remote Controller For Neuroscience Devices",
+        "content": "<h6><u>Challenges</u></h6>1. The client&apos;s Neuroscience Devices are comprised of précised games specific to functioning of distinct brain areas based on Neuroscience principles. They are used by leading healthcare centers across the globe. <br /> <br /> 2. Objective was to deliver a solution that enables a limited number of therapist to handle multiple patients remotely. There was a mismatch between a small number of therapists covering a large number of patients.",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#309acb",
+        "url": "#",
+        "categories": [
+            "1", "4", "6"
+        ]
+    },
+    {
+        "_id": "10",
+        "title": "Customer Service Chatbot For Shared Mobility Solutions",
+        "content": "The client is a European technology company offering software services to the automotive industry and to the enterprise level shared mobility solution providers. The client wanted to develop a solution that can efficiently automate the responses to a large numbers of inquiries generated through multiple sales channels such as Website, mobile app, calls and emails. <br />",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#30cbcb",
+        "url": "#",
+        "categories": [
+            "2", "4", "5", "6"
+        ]
+    },
+    {
+        "_id": "11",
+        "title": "Automated Stock In-Warding Process Logistics Software Service Provider",
+        "content": "<h6><u>Challenges</u></h6>The client has several end users for their logistics and supply chain management system. Some of the major business issues were: <br /> 1. Manual inventory in-warding process resulting in lower efficiency of workers &amp; supervisors. <br /> <br /> 2. Myriad of inefficient systems and semi-manual processes for reports generation.",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#1e9c1e",
+        "url": "#",
+        "categories": [
+            "1", "3", "4"
+        ]
+    },
+    {
+        "_id": "12",
+        "title": "Automated Customer Support Services And Sales Functions With AI Powered ",
+        "content": "<h6><u>Challenges</u></h6> <br /> 1. A leading manufacture in USA for shower doors, was looking to automate their Customer Support and Sales functions to make their operations more efficient. Customer service teams was unable to provide customer care 24/7 and as a result churn rate was high and brand reputation was impacted negatively",
+        "featured_image": "/images/portfolio/port-1.png",
+        "bgcolor": "#9ccb30",
+        "url": "#",
+        "categories": [
+            "2", "3", "4", "6"
+        ]
+    }
+]

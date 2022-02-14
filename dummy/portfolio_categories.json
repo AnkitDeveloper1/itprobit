@@ -1,0 +1,32 @@
+[
+    {
+        "_id": "1",
+        "name": "Blockchain Development",
+        "is_status": "enabled"
+    },
+    {
+        "_id": "2",
+        "name": "Chatbot Development",
+        "is_status": "enabled"
+    },
+    {
+        "_id": "3",
+        "name": "Enterprise Development",
+        "is_status": "enabled"
+    },
+    {
+        "_id": "4",
+        "name": "IoT Development",
+        "is_status": "enabled"
+    },
+    {
+        "_id": "5",
+        "name": "Mobile Development",
+        "is_status": "enabled"
+    },
+    {
+        "_id": "6",
+        "name": "Web App Development",
+        "is_status": "enabled"
+    }
+]

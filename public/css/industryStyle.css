@@ -1,0 +1,92 @@
+section.main-banner::after {
+    content: "";
+    position: absolute;
+    border-right: 1600px solid white;
+    border-bottom: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-top: 70px solid transparent;
+    bottom: 0;
+    width: 100%;
+    right: 0;
+    z-index: 999;
+}
+section.main-banner.services {
+    height: auto;
+    background-image: url('../images/service-banner-bg.jpg');
+    /* background-size: cover; */
+    background-attachment: fixed;
+}
+section.main-banner.services.contact {
+    background: #0c3cd1;
+}
+section.main-banner.iso-banner {
+    height: auto;
+    background-image: url('../images/iso-banner.png') !important;
+    /* background-size: cover; */
+    background-attachment: fixed;
+    background-color: #f16c52;
+    
+}
+section.main-banner.react-native-banner {
+    height: auto;
+    background-image: url('../images/react-native-banner.png') !important;
+    /* background-size: cover; */
+    background-attachment: fixed;
+    background-color: #f16c52;
+    
+}
+section.main-banner.product-design {
+    height: auto;
+    background-image: url('../images/product-design-banner.png') !important;
+    /* background-size: cover; */
+    background-attachment: fixed;
+    background-color: #f16c52;
+}
+section.main-banner.mobile-app-banner {
+    height: auto;
+    background-image: url('../images/mobile-app-banner.png') !important;
+    /* background-size: cover; */
+    background-attachment: fixed;
+    background-color: #f16c52;
+    
+}
+section.main-banner.flutter-banner {
+    height: auto;
+    background-image: url('../images/flutter-banner.png') !important;
+    /* background-size: cover; */
+    background-attachment: fixed;
+    background-color: #f16c52;
+    
+}
+section.main-banner.nodejs-banner {
+    height: auto;
+    background-image: url('../images/nodejs-banner.png') !important;
+    /* background-size: cover; */
+    background-attachment: fixed;
+    background-color: #f16c52;
+    
+}
+section.main-banner.web-app-banner {
+    height: auto;
+    background-image: url('../images/web-app-banner.png') !important;
+    /* background-size: cover; */
+    background-attachment: fixed;
+    background-color: #f16c52;
+    
+}
+section.main-banner.about-banner {
+    height: auto;
+    background-image: url('../images/about-banner.png') !important;
+    /* background-size: cover; */
+    background-attachment: fixed;
+    background-color: #f16c52;
+    
+}
+section.main-banner.android-banner {
+    height: auto;
+    background-image: url('../images/android-banner.png') !important;
+    /* background-size: cover; */
+    background-attachment: fixed;
+    background-color: #f16c52;
+    
+}

@@ -1,0 +1,92 @@
+[
+    {
+        "_id": "1",
+        "name": "Android App Development",
+        "icon": "/images/services-ico/android.svg"
+    },
+    {
+        "_id": "2",
+        "name": "iOS App Development",
+        "icon": "/images/services-ico/iOS.svg"
+    },
+    {
+        "_id": "3",
+        "name": "Web Development",
+        "icon": "/images/services-ico/web.svg"
+    },
+    {
+        "_id": "4",
+        "name": "UI/UX Design",
+        "icon": "/images/services-ico/uiux.svg"
+    },
+    {
+        "_id": "5",
+        "name": "Node.js Development",
+        "icon": "/images/services-ico/node.svg"
+    },
+    {
+        "_id": "6",
+        "name": "IoT App Development",
+        "icon": "/images/services-ico/iot.svg"
+    },
+    {
+        "_id": "7",
+        "name": "Blockchain",
+        "icon": "/images/services-ico/blockchain.svg"
+    },
+    {
+        "_id": "8",
+        "name": "Ruby on Rails Development",
+        "icon": "/images/services-ico/ruby.svg"
+    },
+    {
+        "_id": "9",
+        "name": "Wearable App Development",
+        "icon": "/images/services-ico/wear__dev.svg"
+    },
+    {
+        "_id": "10",
+        "name": "iBeacon",
+        "icon": "/images/services-ico/ibeacon.svg"
+    },
+    {
+        "_id": "11",
+        "name": "AR &amp; VR App Development",
+        "icon": "/images/services-ico/vr.svg"
+    },
+    {
+        "_id": "12",
+        "name": "ChatBot Development",
+        "icon": "/images/services-ico/chatbot.png"
+    },
+    {
+        "_id": "13",
+        "name": "Sharepoint Development",
+        "icon": "/images/services-ico/sharepoint.jpg"
+    },
+    {
+        "_id": "14",
+        "name": "Java Development",
+        "icon": "/images/services-ico/java-icon.png"
+    },
+    {
+        "_id": "15",
+        "name": "Asp.Net Development",
+        "icon": "/images/services-ico/dotnet.png"
+    },
+    {
+        "_id": "16",
+        "name": "Enterprise App Development",
+        "icon": "/images/services-ico/enterprise.png"
+    },
+    {
+        "_id": "17",
+        "name": "Custom Software Development",
+        "icon": "/images/services-ico/code-512.png"
+    },
+    {
+        "_id": "18",
+        "name": "Testing",
+        "icon": "/images/services-ico/testing.png"
+    }
+]

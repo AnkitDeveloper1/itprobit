@@ -8,7 +8,6 @@ let storage = multer.diskStorage({
     cb(null, "./../public/uploads/");
   },
   filename: (req, file, cb) => {
-    console.log(file.originalname);
     cb(null, file.originalname);
   },
 });
@@ -30,7 +29,7 @@ let uploadFile = multer({
   
     cb("Error: File upload only supports the following filetypes - " + filetypes);
   }
-}).single("featured_image");
+});
 
-let uploadFileMiddleware = util.promisify(uploadFile);
-module.exports = uploadFileMiddleware;
+//let uploadFileMiddleware = util.promisify(uploadFile);
+module.exports = uploadFile;

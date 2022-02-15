@@ -128,7 +128,7 @@ router.put('/:id', authentication, async (req, res) => {
 });
 
 
-// Delete Categories
+// Delete Portfolio
 router.delete('/:id', authentication, async (req, res) => {
     
     let category = await Portfolio.findOne({_id: Object(req.params.id) });

@@ -19,6 +19,10 @@ import Reviews from './reviews/listing';
 import AddReview from './reviews/add';
 import EditReview from './reviews/edit';
 
+import Pages from './pages/listing';
+import AddPage from './pages/add';
+import EditPage from './pages/edit';
+
 import "react-toastify/dist/ReactToastify.css";
 
 class Main extends Component {
@@ -53,6 +57,10 @@ class Main extends Component {
                     <Route path="/reviews" element={!this.user?<Navigate to="/" />:<Reviews userName={this.user?this.user.name:''} />} />
                     <Route path="/reviews/add" element={!this.user?<Navigate to="/" />:<AddReview />} />
                     <Route path="/reviews/edit/:id" element={!this.user?<Navigate to="/" />:<EditReview />} />
+
+                    <Route path="/pages" element={!this.user?<Navigate to="/" />:<Pages userName={this.user?this.user.name:''} />} />
+                    <Route path="/pages/add" element={!this.user?<Navigate to="/" />:<AddPage userName={this.user?this.user.name:''} />} />
+                    <Route path="/pages/edit/:id" element={!this.user?<Navigate to="/" />:<EditPage userName={this.user?this.user.name:''} />} />
 
                     <Route path="/" element={!this.user?<Navigate to="/login" />:'/'} />
                     <Route path='*' exact={true} element={<Navigate to="login" />} />

@@ -4,7 +4,7 @@ const {User} = require('./models/user');
 
 
 // Create connection with mongoose DB
-mongoose.connect('mongodb://localhost/ecommerce')
+mongoose.connect('mongodb://localhost/itprobit')
 .then(() => console.log("Database connected"))
 .catch(error => console.log("Database connected", error));
 const seeDB = async() => {

@@ -2,9 +2,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
-export default function HeaderLayout(props) {
-  const { content, styles, navbarColor, navbarClass, classes } = props;
+/*export async function getServerSideProps(context) {
+    // Get Pages
+    const jsonDataSolutionsPages = await fetch("http://localhost:8080/api/pages/front/bytype/solutions");
+    const solutionsPages = await jsonDataSolutionsPages.json()
+    console.log
+    const jsonDataIndustriesPages = await fetch("http://localhost:8080/api/pages/front/bytype/industries");
+    const industriesPages = await jsonDataIndustriesPages.json()
+    const jsonDataTestingPages = await fetch("http://localhost:8080/api/pages/front/bytype/testing");
+    const testingPages = await jsonDataTestingPages.json()
+    
+    return { props: {
+        solutionsPages: solutionsPages,
+        industriesPages: industriesPages,
+        testingPages: testingPages
+    } };
+}*/
 
+export default function HeaderLayout(props) {
+  const { content, styles, navbarColor, navbarClass, classes, response } = props;
+  const solutionsPages = response[0];
+  const industriesPages = response[1];
+  const testingPages = response[2];
+  
   return (
     <>
         {classes?
@@ -27,13 +47,9 @@ export default function HeaderLayout(props) {
                                     Solutions
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <Link href="/services/internet-of-things#arvr"><a className="dropdown-item">AR/VR Development</a></Link>
-                                        <Link href="/services/blockchain-development"><a className="dropdown-item">Blockchain Development</a></Link>
-                                        <Link href="/services#chatbot"><a className="dropdown-item">Chatbot Development</a></Link>
-                                        <Link href="/services/enterprise-application-development"><a className="dropdown-item">Enterprise App Development</a></Link>
-                                        <Link href="/services/internet-of-things"><a className="dropdown-item">IoT App Development</a></Link>
-                                        <Link href="/services/mobile-app-development"><a className="dropdown-item">Mobile App Development</a></Link>
-                                        <Link href="/services/web-app-development"><a className="dropdown-item">Web App Development</a></Link>
+                                        {solutionsPages.data.map((solution, index) => (
+                                            <Link href={"/services/"+solution.url} key={index}><a className="dropdown-item">{solution.title}</a></Link>
+                                        ))}
                                     </div>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -41,13 +57,9 @@ export default function HeaderLayout(props) {
                                     Industries
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdownIndustry">
-                                        <Link href="/industries/automotive-and-transportation-solutions"><a className="dropdown-item">Mobility Solutions</a></Link>
-                                        <Link href="/industries/financial-and-accounting"><a className="dropdown-item">Financial &amp; Accounting</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Food &amp; Beverages</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Healthcare &amp; Fitness</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Retail &amp; E-commerce</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Travel &amp; Hospitality</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Lifestyle &amp; Entertainment</a></Link>
+                                        {industriesPages.data.map((solution, index) => (
+                                            <Link href={"/industries/"+solution.url} key={index}><a className="dropdown-item">{solution.title}</a></Link>
+                                        ))}
                                     </div>
                                 </li>
                                 <li className="nav-item"><Link href="/career"><a className="nav-link">Careers</a></Link></li>
@@ -58,9 +70,9 @@ export default function HeaderLayout(props) {
                                     Testing
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdownIndustry">
-                                        <Link href="#"><a className="dropdown-item">Automation</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Web Testing</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Mobile</a></Link>
+                                        {testingPages.data.map((solution, index) => (
+                                            <Link href={"/testing/"+solution.url} key={index}><a className="dropdown-item">{solution.title}</a></Link>
+                                        ))}
                                     </div>
                                 </li>
                                 <li className="nav-item"><Link href="/contact"><a className="nav-link">Contact Us</a></Link></li>
@@ -93,13 +105,9 @@ export default function HeaderLayout(props) {
                                     Solutions
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <Link href="/services/internet-of-things#arvr"><a className="dropdown-item">AR/VR Development</a></Link>
-                                        <Link href="/services/blockchain-development"><a className="dropdown-item">Blockchain Development</a></Link>
-                                        <Link href="/services#chatbot"><a className="dropdown-item">Chatbot Development</a></Link>
-                                        <Link href="/services/enterprise-application-development"><a className="dropdown-item">Enterprise App Development</a></Link>
-                                        <Link href="/services/internet-of-things"><a className="dropdown-item">IoT App Development</a></Link>
-                                        <Link href="/services/mobile-app-development"><a className="dropdown-item">Mobile App Development</a></Link>
-                                        <Link href="/services/web-app-development"><a className="dropdown-item">Web App Development</a></Link>
+                                        {solutionsPages.data.map(solution => (
+                                            <Link href={"/services/"+solution.url}><a className="dropdown-item">{solution.title}</a></Link>
+                                        ))}
                                     </div>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -107,13 +115,9 @@ export default function HeaderLayout(props) {
                                     Industries
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdownIndustry">
-                                        <Link href="/industries/automotive-and-transportation-solutions"><a className="dropdown-item">Mobility Solutions</a></Link>
-                                        <Link href="/industries/financial-and-accounting"><a className="dropdown-item">Financial &amp; Accounting</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Food &amp; Beverages</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Healthcare &amp; Fitness</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Retail &amp; E-commerce</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Travel &amp; Hospitality</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Lifestyle &amp; Entertainment</a></Link>
+                                        {industriesPages.data.map(solution => (
+                                            <Link href={"/industries/"+solution.url}><a className="dropdown-item">{solution.title}</a></Link>
+                                        ))}
                                     </div>
                                 </li>
                                 <li className="nav-item"><Link href="/career"><a className="nav-link">Careers</a></Link></li>
@@ -124,9 +128,9 @@ export default function HeaderLayout(props) {
                                     Testing
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdownIndustry">
-                                        <Link href="#"><a className="dropdown-item">Automation</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Web Testing</a></Link>
-                                        <Link href="#"><a className="dropdown-item">Mobile</a></Link>
+                                        {testingPages.data.map(solution => (
+                                            <Link href={"/testing/"+solution.url}><a className="dropdown-item">{solution.title}</a></Link>
+                                        ))}
                                     </div>
                                 </li>
                                 <li className="nav-item"><Link href="/contact"><a className="nav-link">Contact Us</a></Link></li>

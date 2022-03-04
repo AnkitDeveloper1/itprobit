@@ -21,7 +21,7 @@ class Header extends Component {
                             <Link className={currentpath.includes("/") && currentpath.length === 1?"nav-link active":"nav-link"} to="/">Dashboard</Link>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className={currentpath.includes("/categories")?"nav-link dropdown-toggle active":"nav-link dropdown-toggle"} href="javscript:void(0)" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                                <a className={currentpath.includes("/portfolio")?"nav-link dropdown-toggle active":"nav-link dropdown-toggle"} href="javscript:void(0)" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
                                 <ul className="dropdown-menu" aria-labelledby="dropdown01">
                                     <li><Link className="dropdown-item" to="/categories">Categories</Link></li>
                                     <li><Link className="dropdown-item" to="/portfolio">Portfolio</Link></li>
@@ -29,6 +29,16 @@ class Header extends Component {
                             </li>
                             <li className="nav-item">
                             <Link className={currentpath.includes("/reviews")?"nav-link active":"nav-link"} to="/reviews">Reviews</Link>
+                            </li>
+                            <li className="nav-item">
+                            <Link className={currentpath.includes("/pages")?"nav-link active":"nav-link"} to="/pages">Pages</Link>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <a className={currentpath.includes("/blogs")?"nav-link dropdown-toggle active":"nav-link dropdown-toggle"} href="javscript:void(0)" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Blogs</a>
+                                <ul className="dropdown-menu" aria-labelledby="dropdown01">
+                                    <li><Link className="dropdown-item" to="/blogs">Blogs</Link></li>
+                                    <li><Link className="dropdown-item" to="/blogs/categories">Categories</Link></li>
+                                </ul>
                             </li>
                             </React.Fragment> }
                             {!userName && <React.Fragment>

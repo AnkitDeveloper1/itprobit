@@ -6,7 +6,15 @@ import DefaultLayout from '../components/layout/default'
 import Header from '../components/services/header'
 import Portfolio from '../components/portfolio/portfolio'
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
+    // Get Pages
+    const jsonDataSolutionsPages = await fetch("http://localhost:8080/api/pages/front/bytype/solutions");
+    const solutionsPages = await jsonDataSolutionsPages.json()
+    const jsonDataIndustriesPages = await fetch("http://localhost:8080/api/pages/front/bytype/industries");
+    const industriesPages = await jsonDataIndustriesPages.json()
+    const jsonDataTestingPages = await fetch("http://localhost:8080/api/pages/front/bytype/testing");
+    const testingPages = await jsonDataTestingPages.json()
+
     // Get Portfolio Categories
     const filePathPortfolioCategories = path.join(process.cwd(), 'dummy', 'portfolio_categories.json');
     const jsonDataPortfolioCategories = await fs.readFile(filePathPortfolioCategories);
@@ -19,12 +27,15 @@ export async function getStaticProps() {
     //const services = await fetch("/dummy/services.json");
     return { props: {
         portfolio: portfolio,
-        portfolioCategories: portfolioCategories
+        portfolioCategories: portfolioCategories,
+        solutionsPages: solutionsPages,
+        industriesPages: industriesPages,
+        testingPages: testingPages,
     } };
 }
 
 export default function PortfolioPage(props) {
-    const { portfolio, portfolioCategories } = props;
+    const { portfolio, portfolioCategories, solutionsPages, industriesPages, testingPages } = props;
 
     return (
     <>
@@ -59,7 +70,7 @@ export default function PortfolioPage(props) {
             border-top: 5px solid #0089a5 !important;
         }
         `}</style>
-        <DefaultLayout header={<Header />} classes="main-banner" navbarColor="#0089a5">
+        <DefaultLayout header={<Header />} response={[solutionsPages, industriesPages, testingPages]} classes="main-banner" navbarColor="#0089a5">
             <Portfolio data={portfolio} categories={portfolioCategories} description="Our cross-functional, agile teams create custom software for industry leaders. Proudly providing software solutions and services to clients across industries since 2012."/>
         </DefaultLayout>
     </>

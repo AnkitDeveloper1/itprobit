@@ -5,7 +5,14 @@ import fs from 'fs/promises'
 import DefaultLayout from '../../components/layout/default'
 import Header from '../../components/services/header'
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
+    // Get Pages
+    const jsonDataSolutionsPages = await fetch("http://localhost:8080/api/pages/front/bytype/solutions");
+    const solutionsPages = await jsonDataSolutionsPages.json()
+    const jsonDataIndustriesPages = await fetch("http://localhost:8080/api/pages/front/bytype/industries");
+    const industriesPages = await jsonDataIndustriesPages.json()
+    const jsonDataTestingPages = await fetch("http://localhost:8080/api/pages/front/bytype/testing");
+    const testingPages = await jsonDataTestingPages.json()
     // Get Services
     const filePathServices = path.join(process.cwd(), 'dummy', 'services.json');
     const jsonDataServices = await fs.readFile(filePathServices);
@@ -14,11 +21,14 @@ export async function getStaticProps() {
     //const services = await fetch("/dummy/services.json");
     return { props: {
         services: services,
+        solutionsPages: solutionsPages,
+        industriesPages: industriesPages,
+        testingPages: testingPages,
     } };
 }
 
 export default function ServicesPage(props) {
-    const { services } = props;
+    const { services, solutionsPages, industriesPages, testingPages } = props;
     return (
     <>
         <Head>
@@ -43,7 +53,7 @@ export default function ServicesPage(props) {
             border-top: 5px solid #0c3cd1 !important;
         }
         `}</style>
-        <DefaultLayout header={<Header heading="Development Services" />} classes="main-banner" navbarColor="#0c3cd1">
+        <DefaultLayout header={<Header heading="Development Services" />} response={[solutionsPages, industriesPages, testingPages]} classes="main-banner" navbarColor="#0c3cd1">
             <section className="services-stack mobcode-tagline cta">
                 <div className="container">
                     <div className="row">

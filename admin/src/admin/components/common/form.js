@@ -8,7 +8,7 @@ class Form extends Component {
         errors: {}
     }
     
-    options = {abortEarly: false};
+    options = {abortEarly: false, allowUnknown: true};
 
     handleChange = ({currentTarget: input}) => {
         if(input.type !== 'file') {
@@ -30,6 +30,25 @@ class Form extends Component {
             data[input.name] = input.files[0];
             this.setState({ data, errors })
         }
+    }
+
+    handleListChange = ({currentTarget: input}, index, multi = "") => {
+        const indexConvert = parseInt(index);
+        const multiConvert = parseInt(multi);
+        const data = {...this.state.data};
+        if(multi >= 0 && multi !== '') {
+            //data[input.name] = [...data[input.name], {...data[input.name][indexConvert], [multiConvert]: input.value}];
+            let a1 = {...data[input.name]};
+            a1[indexConvert][multiConvert] = input.value;
+            data[input.name] = a1;
+        } else {
+            if(input.type !== 'file') {
+                data[input.name][index] = input.value;
+            } else {
+                data[input.name][index] = input.files[0];
+            }
+        }
+        this.setState({ data })
     }
     
     validateProperty = ({name, value}) => {

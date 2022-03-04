@@ -41,5 +41,42 @@
             "Bluetooth Belts"
         ],
         "section_four_image": "/images/Services/app_3.png"
+    },
+    {
+        "_id": "2",
+        "type": "Industries",
+        "title": "Healthcare & Fitness Digital Solutions",
+        "url": "healthcare-fitness",
+        "layout": "layout 2",
+        "section_one_heading": "Looking to redefine your retail business with smart mobility solutions?",
+        "section_one_content": "Sensors on wrist. Sensors on phone. Sensors in the home. With always-on tracking of movement & exercise routines and friction-less food & nutrition information logging, wellness & fitness has never seen such IT-enabled focus. People are conscious about their health and are spending a huge amount of their wealth in IT solutions that provide the right information at the right time to improve and maintain their fitness. Itprobit helps brands and start-ups use the best in technology to provide state-of-the-art solutions to service these consumers and drive long-term loyalty. With technologies like Mobile app development, IoT Solutions, Artificial Intelligence, AR-VR, Chatbot development etc., the future of healthcare industry is advancing and changing continuously. For instance, wearables and 3D printing, when they were invented, were not meant to be used to cater healthcare industry. However, they are increasingly utilised in various areas of healthcare industry using wearable app development, Artificial Intelligence and AR/VR.",
+        "sections_all": {
+            "0": {
+                "align_image_left": "left",
+                "section_image": "/images/industry/banner-hospitality.png",
+                "section_title": "Advanced Hospital Mobility Solutions",
+                "section_content": "Leveraging enterprise mobility solutions, hospitals can now go Smart and have broad range of solutions such as connected rooms, smart alerts and notifications, smartphone based applications for caregivers. The hospital mobility solutions leveraging mHealthcare offers following features:",
+                "section_listing": [
+                    "Streamlined and clinical workflow",
+                    "Effective and well managed staff performance",
+                    "Pharmacy and other inventory management with RFID and other tagging technologies",
+                    "Smart consoles to allow patients to track their treatment progress and communicate with staff, doctors or relatives",
+                    "Electronic medical records (EMRs), Electronic health records (EHRs) can be better determined"
+                ]
+            },
+            "1": {
+                "align_image_left": "right",
+                "section_image": "/images/industry/healthcareFitness.png",
+                "section_title": "Custom Mobility and Consulting for increasing doctor's Productivity",
+                "section_content": "Doctors frequently face critical issues in communicating with the patients while they have to look after other patients too. This hampers their productivity a lot. Proper integration of Healthcare solutions can increase doctors’ productivity and much personalized communications and encounters with patients. Integrating Healthcare solutions can help increasing doctors’ productivity in following ways:",
+                "section_listing": [
+                    "Patient engagement mobile apps help in improved and personalized communication",
+                    "Secured data communication",
+                    "Monitor vital health indicators collected by portable devices for accurate treatment",
+                    "Monitor patients at home live video and audio streaming",
+                    "Competent disease management"
+                ]
+            }
+        }
     }
 ]

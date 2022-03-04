@@ -234,7 +234,7 @@ export default function WebAppDevelopmentPage() {
                         </div>
                         <div className="row">
                             <div className="col-md-3 mx-auto">
-                                <a className="ta-button mt-2 openForm" href="javascript:;">Get in Touch with us</a>
+                                <a className="ta-button mt-2 openForm" href="">Get in Touch with us</a>
                             </div>
                         </div>
                     </div>

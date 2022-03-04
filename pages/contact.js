@@ -3,8 +3,48 @@ import Head from 'next/head'
 import Link from "next/link";
 import DefaultLayout from '../components/layout/default'
 import Header from '../components/services/header'
+import { useState } from 'react';
 
-export default function ContactPage() {
+export async function getServerSideProps(context) {
+    // Get Pages
+    const jsonDataSolutionsPages = await fetch("http://localhost:8080/api/pages/front/bytype/solutions");
+    const solutionsPages = await jsonDataSolutionsPages.json()
+    const jsonDataIndustriesPages = await fetch("http://localhost:8080/api/pages/front/bytype/industries");
+    const industriesPages = await jsonDataIndustriesPages.json()
+    const jsonDataTestingPages = await fetch("http://localhost:8080/api/pages/front/bytype/testing");
+    const testingPages = await jsonDataTestingPages.json()
+  
+    return { props: {
+        solutionsPages: solutionsPages,
+        industriesPages: industriesPages,
+        testingPages: testingPages,
+    } };
+}
+
+export default function ContactPage(props) {
+    const { solutionsPages, industriesPages, testingPages } = props;
+    const [query, setQuery] = useState('')
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        const res = await fetch('http://localhost:8080/api/contact', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: [query],
+        });
+        
+        const data = await res.json();
+        console.log(data);
+    }
+
+    const handleOnChange = (input) => {
+        let inputValue = input.currentTarget.value;
+        let inputName = input.currentTarget.name
+        setQuery({...query, [inputName]: inputValue});
+    }
 
     return (
         <>
@@ -18,7 +58,7 @@ export default function ContactPage() {
                 border-top: 5px solid #0099da !important;
             }
             `}</style>
-            <DefaultLayout header={<Header heading="Let's amaze the world with our work" />} classes="main-banner" navbarclassName="" navbarColor="#0099da">
+            <DefaultLayout header={<Header heading="Let's amaze the world with our work" />} response={[solutionsPages, industriesPages, testingPages]} classes="main-banner" navbarclassName="" navbarColor="#0099da">
                 <section className="container contact-section">
                     <div id="innercontainer" className="form-content contact-forms">
                         <div id="mainwide" className="row">
@@ -26,8 +66,7 @@ export default function ContactPage() {
                                 <div className="top-row blue-bar wht-bar row">
                                     <h2 className="h2 sm"> Get in touch with us </h2>
                                 </div>
-                                <form>
-                                    <input type="hidden" name="id" value="" />
+                                <form method='post' onSubmit={handleSubmit}>
                                     <div className="flexigreybox mtop20">
                                         <div className="middlearea">
                                             <div className="map-section">
@@ -35,21 +74,21 @@ export default function ContactPage() {
                                             <div className="contactform">
                                                 <div className="form-sec row">
                                                     <div className="form-group col-sm-6">
-                                                        <input id="contactname" name="contactPerson" type="text" className="input inp" placeholder="Contact Person" value="" />
+                                                        <input id="contactname" name="name" type="text" className="input inp" placeholder="Contact Person" onChange={handleOnChange} />
                                                         <label>Contact Person <span className="red-text">*</span> </label>
                                                         <div className="error-brdr"> </div>
                                                     </div>
                                                     <div className="form-group col-sm-6">
-                                                        <input id="contactcompanyname" name="companyName" type="text" className="input inp" placeholder="Company Name" value="" />
+                                                        <input id="contactcompanyname" name="company_name" type="text" className="input inp" placeholder="Company Name" onChange={handleOnChange} />
                                                         <label>Company Name</label>
                                                     </div>
                                                     <div className="form-group col-sm-6">
-                                                        <input id="contactemail" name="email" type="email" className="input inp" placeholder="Email Address" value="" />
+                                                        <input id="contactemail" name="email" type="email" className="input inp" placeholder="Email Address" />
                                                         <label>Email Address <span className="red-text">*</span></label>
                                                         <div className="error-brdr"> </div>
                                                     </div>
                                                     <div className="form-group col-sm-6">
-                                                        <input  id="contactphone" name="phone" type="phone" className="input inp" placeholder="Phone" value="" />
+                                                        <input  id="contactphone" name="phone_number" type="phone" className="input inp" placeholder="Phone" />
                                                         <label>Phone Number <span className="red-text">*</span></label>
                                                         <div className="error-brdr"> </div>
                                                     </div>
@@ -300,7 +339,7 @@ export default function ContactPage() {
                                                         </select>
                                                     </div>
                                                     <div className="form-group col-sm-12 textarea-group">
-                                                        <textarea id="contactdescription" name="description" className="input textarea" placeholder="Comments/Message" rows="7"></textarea>
+                                                        <textarea id="contactdescription" name="message" className="input textarea" placeholder="Comments/Message" rows="7"></textarea>
                                                         <label>Comments/Message<span className="red-text">*</span></label>
                                                         <div className="error-brdr"> </div>
                                                     </div>
@@ -328,7 +367,7 @@ export default function ContactPage() {
                                                 </div>
                                                 <dl>
                                                     <div className="btn-contact circle-btn">
-                                                        <a className="circle-btn red-btn" href="#">Submit</a>
+                                                        <input className="circle-btn red-btn" type="submit" value="Submit" />
                                                     </div>
                                                     <span className="next2btn" ></span>
                                                 </dl>
@@ -391,7 +430,7 @@ export default function ContactPage() {
                         </div>
                         <div className="row">
                             <div className="col-md-3 mx-auto">
-                                <a className="ta-button mt-2 openForm" href="javascript:;">Get in Touch with us</a>
+                                <a className="ta-button mt-2 openForm" href="">Get in Touch with us</a>
                             </div>
                         </div>
                     </div>

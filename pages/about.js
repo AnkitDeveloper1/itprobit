@@ -9,7 +9,24 @@ const OwlCarousel = dynamic(import("react-owl-carousel"), {ssr: false});
 import DefaultLayout from '../components/layout/default'
 import Header from '../components/services/header'
 
-export default function AboutPage() {
+export async function getServerSideProps(context) {
+    // Get Pages
+    const jsonDataSolutionsPages = await fetch("http://localhost:8080/api/pages/front/bytype/solutions");
+    const solutionsPages = await jsonDataSolutionsPages.json()
+    const jsonDataIndustriesPages = await fetch("http://localhost:8080/api/pages/front/bytype/industries");
+    const industriesPages = await jsonDataIndustriesPages.json()
+    const jsonDataTestingPages = await fetch("http://localhost:8080/api/pages/front/bytype/testing");
+    const testingPages = await jsonDataTestingPages.json()
+  
+    return { props: {
+        solutionsPages: solutionsPages,
+        industriesPages: industriesPages,
+        testingPages: testingPages,
+    } };
+}
+
+export default function AboutPage(props) {
+    const { solutionsPages, industriesPages, testingPages } = props;
 
     return (
         <>
@@ -59,7 +76,7 @@ export default function AboutPage() {
                 color: #4ad1e5;
             }
             `}</style>
-            <DefaultLayout header={<Header heading="About Us" />} classes="main-banner" navbarclassName="" navbarColor="#f16c52">
+            <DefaultLayout header={<Header heading="About Us" />} response={[solutionsPages, industriesPages, testingPages]} classes="main-banner" navbarclassName="" navbarColor="#f16c52">
                 <br />
                 <br />
                 

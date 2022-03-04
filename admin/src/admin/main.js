@@ -15,6 +15,14 @@ import Portfolio from './portfolio/listing';
 import AddPortfolio from './portfolio/add';
 import EditPortfolio from './portfolio/edit';
 
+import Blogs from './blogs/listing';
+import AddBlog from './blogs/add';
+import EditBlog from './blogs/edit';
+
+import BlogsCategories from './blogs_categories/listing';
+import AddBlogCategories from './blogs_categories/add';
+import EditBlogCategories from './blogs_categories/edit';
+
 import Reviews from './reviews/listing';
 import AddReview from './reviews/add';
 import EditReview from './reviews/edit';
@@ -49,6 +57,14 @@ class Main extends Component {
                     <Route path="/portfolio" element={!this.user?<Navigate to="/" />:<Portfolio userName={this.user?this.user.name:''} />} />
                     <Route path="/portfolio/add" element={!this.user?<Navigate to="/" />:<AddPortfolio />} />
                     <Route path="/portfolio/edit/:id" element={!this.user?<Navigate to="/" />:<EditPortfolio />} />
+
+                    <Route path="/blogs" element={!this.user?<Navigate to="/" />:<Blogs userName={this.user?this.user.name:''} />} />
+                    <Route path="/blogs/add" element={!this.user?<Navigate to="/" />:<AddBlog />} />
+                    <Route path="/blogs/edit/:id" element={!this.user?<Navigate to="/" />:<EditBlog />} />
+
+                    <Route path="/blogs/categories" element={!this.user?<Navigate to="/" />:<BlogsCategories userName={this.user?this.user.name:''} />} />
+                    <Route path="/blogs/categories/add" element={!this.user?<Navigate to="/" />:<AddBlogCategories />} />
+                    <Route path="/blogs/categories/edit/:id" element={!this.user?<Navigate to="/" />:<EditBlogCategories />} />
 
                     <Route path="/categories" element={!this.user?<Navigate to="/" />:<Categories userName={this.user?this.user.name:''} />} />
                     <Route path="/categories/add" element={!this.user?<Navigate to="/" />:<AddCategory />} />

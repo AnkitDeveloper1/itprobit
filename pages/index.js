@@ -27,30 +27,41 @@ import ReviewsComponent from '../components/home/reviews'
 import BlogComponent from '../components/home/blog'
 import SubscribeComponent from '../components/home/subscribe'
 
-export async function getStaticProps() {
-    // Get Services
-    const filePathServices = path.join(process.cwd(), 'dummy', 'services.json');
-    const jsonDataServices = await fs.readFile(filePathServices);
-    const services = JSON.parse(jsonDataServices);
-    // Get Reviews
-    const filePathReviews = path.join(process.cwd(), 'dummy', 'reviews.json');
-    const jsonDataReviews = await fs.readFile(filePathReviews);
-    const reviews = JSON.parse(jsonDataReviews);
-    // Get Blogs
-    const filePathBlogs = path.join(process.cwd(), 'dummy', 'blogs.json');
-    const jsonDataBlogs = await fs.readFile(filePathBlogs);
-    const blogs = JSON.parse(jsonDataBlogs);
-    
-    //const services = await fetch("/dummy/services.json");
-    return { props: {
-        services: services,
-        reviews: reviews,
-        blogs: blogs
-    } };
+export async function getServerSideProps(context) {
+  // Get Pages
+  const jsonDataSolutionsPages = await fetch("http://localhost:8080/api/pages/front/bytype/solutions");
+  const solutionsPages = await jsonDataSolutionsPages.json()
+  const jsonDataIndustriesPages = await fetch("http://localhost:8080/api/pages/front/bytype/industries");
+  const industriesPages = await jsonDataIndustriesPages.json()
+  const jsonDataTestingPages = await fetch("http://localhost:8080/api/pages/front/bytype/testing");
+  const testingPages = await jsonDataTestingPages.json()
+
+  // Get Services
+  const filePathServices = path.join(process.cwd(), 'dummy', 'services.json');
+  const jsonDataServices = await fs.readFile(filePathServices);
+  const services = JSON.parse(jsonDataServices);
+  // Get Reviews
+  const filePathReviews = path.join(process.cwd(), 'dummy', 'reviews.json');
+  const jsonDataReviews = await fs.readFile(filePathReviews);
+  const reviews = JSON.parse(jsonDataReviews);
+  // Get Blogs
+  const filePathBlogs = path.join(process.cwd(), 'dummy', 'blogs.json');
+  const jsonDataBlogs = await fs.readFile(filePathBlogs);
+  const blogs = JSON.parse(jsonDataBlogs);
+  
+  return { props: {
+      solutionsPages: solutionsPages,
+      industriesPages: industriesPages,
+      testingPages: testingPages,
+      services: services,
+      reviews: reviews,
+      blogs: blogs
+  } };
 }
 
 export default function Home(props) {
-    const { services, reviews, blogs } = props;
+    const { services, reviews, blogs, solutionsPages, industriesPages, testingPages } = props;
+    
     return (
     <div>
       <Head>
@@ -58,7 +69,7 @@ export default function Home(props) {
         <meta name="title" content="ItProBit Software Development Company | Mobile App development Company | Software Testing" />
         <meta name="description" content="Itprobit is a leading software development company Product, Mobile, Web, Computer Vision, Video Analytics, Software Testing, Automation, Supply Chain Consulting, Government Project, ReactJS, React Native, AngularJS and NodeJS." />
       </Head>
-      <DefaultLayout header={<Slider />} styles={{backgroundColor:'#5c2be6'}} navbarColor="#5c2be6">
+      <DefaultLayout header={<Slider />} response={[solutionsPages, industriesPages, testingPages]} styles={{backgroundColor:'#5c2be6'}} navbarColor="#5c2be6">
         <ServicesComponent services={services} title="What Interests You" description="We map a strategy, build a solution or elevate your product experience with focused engagements available as standalone offerings or as a part of your project’s service stack." />
 
         <IndustriesComponent />

@@ -6,19 +6,30 @@ import Link from "next/link";
 import DefaultLayout from '../components/layout/default'
 import Header from '../components/services/header'
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
+    // Get Pages
+    const jsonDataSolutionsPages = await fetch("http://localhost:8080/api/pages/front/bytype/solutions");
+    const solutionsPages = await jsonDataSolutionsPages.json()
+    const jsonDataIndustriesPages = await fetch("http://localhost:8080/api/pages/front/bytype/industries");
+    const industriesPages = await jsonDataIndustriesPages.json()
+    const jsonDataTestingPages = await fetch("http://localhost:8080/api/pages/front/bytype/testing");
+    const testingPages = await jsonDataTestingPages.json()
+
     // Get Services
     const filePathCareer = path.join(process.cwd(), 'dummy', 'career.json');
     const jsonDataCareer = await fs.readFile(filePathCareer);
     const careers = JSON.parse(jsonDataCareer);
     
     return { props: {
-        careers: careers
+        careers: careers,
+        solutionsPages: solutionsPages,
+        industriesPages: industriesPages,
+        testingPages: testingPages,
     } };
 }
 
 export default function CareerPage(props) {
-    const { careers } = props;
+    const { careers, solutionsPages, industriesPages, testingPages } = props;
     return (
         <>
             <Head>
@@ -31,7 +42,7 @@ export default function CareerPage(props) {
                 border-top: 5px solid #f16c52 !important;
             }
             `}</style>
-            <DefaultLayout header={<Header heading="Current Job Openings" />} classes="main-banner" navbarclassName="" navbarColor="#379683">
+            <DefaultLayout header={<Header heading="Current Job Openings" />} response={[solutionsPages, industriesPages, testingPages]} classes="main-banner" navbarclassName="" navbarColor="#379683">
                 <section>
                     <div className="container aos-init aos-animate" data-aos="fade-up">
                         <div className="hsgroup row mr0">

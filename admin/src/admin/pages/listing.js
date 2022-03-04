@@ -22,7 +22,7 @@ class Listing extends Component {
             {path: "title", label: "Title"},
             {path: "layout", label: "Layout"},
             {path: "status", label: "Status"},
-            {path: "action", label: "Action", key: "action", content: page => <React.Fragment><Link to={`/pages/edit/${page._id}`}><i className="fa fa-pencil"></i></Link>&nbsp;|&nbsp;<Link to="#deleteModel" data-bs-toggle="modal" data-bs-target="#deleteModel"  onClick={() => this.handleDeleteClick(page._id)}><i className="fa fa-eye"></i></Link></React.Fragment> }
+            {path: "action", label: "Action", key: "action", content: page => <React.Fragment><Link to={`/pages/edit/${page._id}`}><i className="fa fa-pencil"></i></Link>&nbsp;|&nbsp;<Link to="#deleteModel" data-bs-toggle="modal" data-bs-target="#deleteModel"  onClick={() => this.handleDeleteClick(page._id)}><i className="fa fa-trash"></i></Link></React.Fragment> }
         ],
         filterFields: [
             {

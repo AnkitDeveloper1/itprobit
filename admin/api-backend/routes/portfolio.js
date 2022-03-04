@@ -1,6 +1,7 @@
 const {Portfolio, validate} = require('../models/portfolio');
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 const authentication = require('../middleware/auth');
 const uploadFile = require("../middleware/upload");
 
@@ -31,14 +32,19 @@ router.get('/:id', authentication, async (req, res) => {
 // Add Portfolio
 router.post('/', authentication, async (req, res) => {
     try {
-        await uploadFile(req, res);
-    
-        if (req.file === undefined) {
+        if (!req.files || Object.keys(req.files).length === 0) {
             return res.json({
                 "success": false,
-                "message": "Please upload a file!",
+                "errors": "No file were uploaded!",
             });
         }
+        // File
+        let featured_image = req.files.featured_image;
+        let uploadPath = Date.now() + '-' + Math.round(Math.random() * 1E9)+path.extname(featured_image.name)
+        const featuredImageFile = featured_image.name + '-' + uploadPath
+        uploadPath = './../../public/uploads/' + featured_image.name + '-' + uploadPath
+        
+        uploadFile(featured_image, uploadPath)
         
         const {error} = validate(req.body);
         if(error) return res.json({
@@ -58,7 +64,7 @@ router.post('/', authentication, async (req, res) => {
             categories: req.body.categories,
             title: req.body.title,
             content: req.body.content,
-            featured_image: req.file.filename,
+            featured_image: featuredImageFile,
             bgcolor: req.body.bgcolor,
             url: req.body.url,
             status: req.body.status,

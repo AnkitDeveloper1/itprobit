@@ -68,13 +68,13 @@ export default function PageLayoutTwo(props) {
 
                                         {Object.values(data.section_listing[0][index]).map((list, i) => (
                                             (i%2 === 0 && 
-                                            <div className="col-md-6 service-list">
+                                            <div className="col-md-6 service-list" key={i}>
                                                 <ul className="ta-listW">
                                                     <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>
                                                 </ul>
                                             </div>) || 
                                             (i%2 !== 0 && 
-                                            <div className="col-md-6 service-list">
+                                            <div className="col-md-6 service-list" key={i}>
                                                 <ul className="ta-listW">
                                                     <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>
                                                 </ul>
@@ -100,13 +100,13 @@ export default function PageLayoutTwo(props) {
 
                                     {Object.values(data.section_listing[0][index]).map((list, i) => (
                                             (i%2 === 0 && 
-                                            <div className="col-md-6 service-list">
+                                            <div className="col-md-6 service-list" key={i}>
                                                 <ul className="ta-listW">
                                                     <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>
                                                 </ul>
                                             </div>) || 
                                             (i%2 !== 0 && 
-                                            <div className="col-md-6 service-list">
+                                            <div className="col-md-6 service-list" key={i}>
                                                 <ul className="ta-listW">
                                                     <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>
                                                 </ul>

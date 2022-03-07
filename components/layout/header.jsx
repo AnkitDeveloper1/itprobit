@@ -106,7 +106,7 @@ export default function HeaderLayout(props) {
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                         {solutionsPages.data.map(solution => (
-                                            <Link href={"/services/"+solution.url}><a className="dropdown-item">{solution.title}</a></Link>
+                                            <Link href={"/services/"+solution.url} key={solution._id}><a className="dropdown-item">{solution.title}</a></Link>
                                         ))}
                                     </div>
                                 </li>
@@ -116,7 +116,7 @@ export default function HeaderLayout(props) {
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdownIndustry">
                                         {industriesPages.data.map(solution => (
-                                            <Link href={"/industries/"+solution.url}><a className="dropdown-item">{solution.title}</a></Link>
+                                            <Link href={"/industries/"+solution.url} key={solution._id}><a className="dropdown-item">{solution.title}</a></Link>
                                         ))}
                                     </div>
                                 </li>
@@ -129,7 +129,7 @@ export default function HeaderLayout(props) {
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdownIndustry">
                                         {testingPages.data.map(solution => (
-                                            <Link href={"/testing/"+solution.url}><a className="dropdown-item">{solution.title}</a></Link>
+                                            <Link href={"/testing/"+solution.url} key={solution._id}><a className="dropdown-item">{solution.title}</a></Link>
                                         ))}
                                     </div>
                                 </li>

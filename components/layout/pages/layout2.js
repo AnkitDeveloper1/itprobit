@@ -29,11 +29,11 @@ export default function PageLayoutTwo(props) {
             padding-bottom: 10rem!important;
         }
         `}</style>
-        <div class="bg"></div>
-        <div class="bg bg2"></div>
-        <div class="bg bg3"></div>
+        <div className="bg"></div>
+        <div className="bg bg2"></div>
+        <div className="bg bg3"></div>
         <DefaultLayout header={<Header heading="Automotive &amp; Transportation Solutions" bgcolor='#8b4ea5' />} classes="main-banner" navbarclassName="" navbarColor="#8b4ea5" response={response}>
-            <section className="services-stack mobcode-tagline cta pt-5" style={{backgroundColor:'white !important'}}>
+            <section className="services-stack mobcode-tagline cta pt-5" style={{backgroundColor:'#fff'}}>
                 <div className="container pt-5">
                     <h3 className="android-dev mb-3 text-left">{data.section_one_heading}</h3>
                     <div className="row">
@@ -66,20 +66,20 @@ export default function PageLayoutTwo(props) {
                                 <div className="container pl-2 pt-3">
                                     <div className="row">
 
-                                        <div className="col-md-6 service-list">
-                                            <ul className="ta-listW">
-                                                {Object.values(data.section_listing[0][index]).map((list, i) => (
-                                                    (i < (Math.ceil(data.section_listing[0][index].length/2)) && <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>)
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div className="col-md-6 service-list">
-                                            <ul className="ta-listW">
-                                                {Object.values(data.section_listing[0][index]).map((list, i) => (
-                                                    (i >= (Math.ceil(data.section_listing[0][index].length/2)) && <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>)
-                                                ))}
-                                            </ul>
-                                        </div>
+                                        {Object.values(data.section_listing[0][index]).map((list, i) => (
+                                            (i%2 === 0 && 
+                                            <div className="col-md-6 service-list">
+                                                <ul className="ta-listW">
+                                                    <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>
+                                                </ul>
+                                            </div>) || 
+                                            (i%2 !== 0 && 
+                                            <div className="col-md-6 service-list">
+                                                <ul className="ta-listW">
+                                                    <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>
+                                                </ul>
+                                            </div>)
+                                        ))}
                                     </div>
                                 </div>
                             </div>
@@ -98,20 +98,20 @@ export default function PageLayoutTwo(props) {
                                 <div className="container pl-2 pt-3">
                                     <div className="row">
 
-                                        <div className="col-md-6 service-list">
-                                            <ul className="ta-listW">
-                                                {Object.values(data.section_listing[0][index]).map((list, i) => (
-                                                    (i < (Math.ceil(data.section_listing[0][index].length/2)) && <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>)
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div className="col-md-6 service-list">
-                                            <ul className="ta-listW">
-                                                {Object.values(data.section_listing[0][index]).map((list, i) => (
-                                                    (i >= (Math.ceil(data.section_listing[0][index].length/2)) && <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>)
-                                                ))}
-                                            </ul>
-                                        </div>
+                                    {Object.values(data.section_listing[0][index]).map((list, i) => (
+                                            (i%2 === 0 && 
+                                            <div className="col-md-6 service-list">
+                                                <ul className="ta-listW">
+                                                    <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>
+                                                </ul>
+                                            </div>) || 
+                                            (i%2 !== 0 && 
+                                            <div className="col-md-6 service-list">
+                                                <ul className="ta-listW">
+                                                    <li key={i}><a href="#"><i className="fas fa-check"></i> {list}</a></li>
+                                                </ul>
+                                            </div>)
+                                        ))}
                                     </div>
                                 </div>
                             </div>

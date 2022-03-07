@@ -1,4 +1,6 @@
 import dynamic from 'next/dynamic'
+import Link from 'next/link';
+import { format } from 'date-fns'
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 const OwlCarousel = dynamic(import("react-owl-carousel"), {ssr: false});
@@ -18,15 +20,15 @@ export default function Blog(props) {
             <div className="container-fluid">
                 <div className="row">
                     <OwlCarousel className="products-carousel owl-carousel" navText={ "<i className='fas fa-long-arrow-alt-left'></i>", "<i className='fas fa-long-arrow-alt-right'></i>" } nav loop items={4} margin={10}>
-                        {blogs.map(blog => (
+                        {blogs.data.map(blog => (
                             <div className="single-review border p-4" key={blog._id}>
                                 <div className="quote-icon">
                                     <i className="fas fa-rss"></i>
                                 </div>
-                                <h4><a href="blogs/iot_blog.html">{blog.title}</a> </h4>
-                                <p> {blog.content} ...</p>
+                                <h4><Link href={"/blogs/"+blog.url}><a>{blog.title}</a></Link></h4>
+                                <p> {`${blog.content.substring(0, 150)}...`}</p>
                                 <div className="">
-                                    <p>{blog.added_on}</p>
+                                    <p>{format(new Date(blog.created_on), 'dd MMMM, yyyy')}</p>
                                 </div>
                             </div>
                         ))}

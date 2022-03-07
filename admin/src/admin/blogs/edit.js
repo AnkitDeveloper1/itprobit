@@ -17,7 +17,7 @@ class Edit extends Form {
     schema = {
         categories: Joi.string().min(3).max(30).required(),
         title: Joi.string().min(3).max(30).required(),
-        content: Joi.string().min(3).max(30).required(),
+        content: Joi.string().min(3).required(),
         featured_image: Joi.any().required(),
         tags: Joi.required(),
         url: Joi.string().min(3).max(30).required(),
@@ -110,7 +110,7 @@ class Edit extends Form {
                     <div className="row mb-3">
                         <label htmlFor="content" className="col-sm-2 col-form-label">Content</label>
                         <div className="col-sm-10">
-                            <input type="text" className="form-control" name="content" value={this.state.data.content} onChange={this.handleChange} />
+                            <textarea type="text" className="form-control" name="content" value={this.state.data.content} onChange={this.handleChange} />
                             {errors.content && <div className="alert alert-danger">{errors.content}</div>}
                         </div>
                     </div>

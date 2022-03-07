@@ -20,7 +20,7 @@ export default function OurClient(props) {
                 <div className="row">
                     <div className="col-md-12">
                         <OwlCarousel className="client-reviews-carousel owl-carousel" loop items={3} margin={10}>
-                            {reviews.map(review => (
+                            {reviews.data.map(review => (
                                 <div className="single-review border p-4" key={review._id}>
                                     <div className="quote-icon">
                                         <i className="fas fa-quote-left"></i>

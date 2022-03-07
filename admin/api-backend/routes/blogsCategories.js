@@ -110,5 +110,15 @@ router.delete('/:id', authentication, async (req, res) => {
     });
 });
 
+// Get Front Categories
+router.get('/front/list', async (req, res) => {
+    
+    let category = await Category.find();
+    
+    res.json({
+        "success": true,
+        "data": category
+    });
+});
 
 module.exports = router;

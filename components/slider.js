@@ -16,7 +16,7 @@ export default function SimpleSlider(props) {
                     <div className="header-text" style={{paddingTop:'25%'}}>
                         <h1>Crafting Innovative Mobile and Software Solutions</h1>
                         <p>for startups &#38; enterprise that hogs the limelight.</p>
-                        <a className="ta-button mt-2" href="services.html">Learn More</a>
+                        <a className="ta-button mt-2" href="#">Learn More</a>
                     </div>
                 </div>
                 <div className="col-md">
@@ -30,7 +30,7 @@ export default function SimpleSlider(props) {
                     <div className="header-text" style={{paddingTop:'25%'}}>
                         <h1>Developing Solutions For HealthCare</h1>
                         <p>ItProBit is a hub of talented, skilled, and experienced engineers who can work proficiently on advance digital technology.</p>
-                        <a className="ta-button mt-2" href="services.html">Learn More</a>
+                        <a className="ta-button mt-2" href="#">Learn More</a>
                     </div>
                 </div>
                 <div className="col-md">
@@ -44,7 +44,7 @@ export default function SimpleSlider(props) {
                     <div className="header-text" style={{paddingTop:'25%'}}>
                         <h1>Hire Dedicated Developers</h1>
                         <p>ItProBit is a hub of talented, skilled, and experienced engineers who can work proficiently on advance digital technology.</p>
-                        <a className="ta-button mt-2" href="services.html">Learn More</a>
+                        <a className="ta-button mt-2" href="#">Learn More</a>
                     </div>
                 </div>
                 <div className="col-md">
@@ -58,7 +58,7 @@ export default function SimpleSlider(props) {
                     <div className="header-text" style={{paddingTop:'25%'}}>
                         <h1>Build a Great Mobile Experience Faster </h1>
                         <p>We don&apos;t chase treands, we&apos;re recognized for creating the product that define them. We&apos;re not shy about sharing what some of the most trusted industry.</p>
-                        <a className="ta-button mt-2" href="services.html">Learn More</a>
+                        <a className="ta-button mt-2" href="#">Learn More</a>
                     </div>
                 </div>
                 <div className="col-md">

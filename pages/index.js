@@ -41,13 +41,14 @@ export async function getServerSideProps(context) {
   const jsonDataServices = await fs.readFile(filePathServices);
   const services = JSON.parse(jsonDataServices);
   // Get Reviews
-  const filePathReviews = path.join(process.cwd(), 'dummy', 'reviews.json');
-  const jsonDataReviews = await fs.readFile(filePathReviews);
-  const reviews = JSON.parse(jsonDataReviews);
+  const filePathReviews = await fetch("http://localhost:8080/api/reviews/front/list");
+  const reviews = await filePathReviews.json()
   // Get Blogs
-  const filePathBlogs = path.join(process.cwd(), 'dummy', 'blogs.json');
-  const jsonDataBlogs = await fs.readFile(filePathBlogs);
-  const blogs = JSON.parse(jsonDataBlogs);
+  //const filePathBlogs = path.join(process.cwd(), 'dummy', 'blogs.json');
+  //const jsonDataBlogs = await fs.readFile(filePathBlogs);
+  //const blogs = JSON.parse(jsonDataBlogs);
+  const jsonDataBlogs = await fetch("http://localhost:8080/api/blogs/front/list");
+  const blogs = await jsonDataBlogs.json()
   
   return { props: {
       solutionsPages: solutionsPages,

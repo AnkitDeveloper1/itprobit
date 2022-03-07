@@ -67,6 +67,11 @@ function MyApp({ Component, pageProps }) {
     (Component.name === "AutomotiveAndTransportationSolutionsPage" || Component.name === "FinancialAndAccountingPage" || (pageProps.pages && pageProps.pages.data && pageProps.pages.data.layout === "layout_2"))?
     (import('../public/css/timeline-12.css'), import('../public/css/services/iotStyle.css'), import("aos/dist/aos.css"), import('../public/css/aos.css')):''
   ), {ssr: false});
+  
+  dynamic((
+    (Component.name === "BlogDetailPage")?
+    (import('../public/css/servicesStyle.css')):''
+  ), {ssr: false});
 
 
   useEffect(() => {

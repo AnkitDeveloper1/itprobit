@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import Head from 'next/head'
+import { format } from 'date-fns'
 import Link from "next/link";
 import DefaultLayout from '../../components/layout/default'
 import Header from '../../components/services/header'
+import { data } from 'jquery';
 
 export async function getServerSideProps(context) {
     // Get Pages
@@ -16,17 +18,21 @@ export async function getServerSideProps(context) {
     // Get Blogs
     const jsonDataBlogs = await fetch("http://localhost:8080/api/blogs/front/list");
     const blogs = await jsonDataBlogs.json()
+    // Get Blogs Categories
+    const jsonDataBlogsCategories = await fetch("http://localhost:8080/api/blogs_categories/front/list");
+    const blogsCategories = await jsonDataBlogsCategories.json()
   
     return { props: {
         blogs: blogs,
         solutionsPages: solutionsPages,
         industriesPages: industriesPages,
         testingPages: testingPages,
+        blogsCategories: blogsCategories
     } };
 }
 
 export default function BlogPage(props) {
-    const { blogs, solutionsPages, industriesPages, testingPages } = props;
+    const { blogs, solutionsPages, industriesPages, testingPages, blogsCategories } = props;
 
     return (
         <>
@@ -47,144 +53,26 @@ export default function BlogPage(props) {
                             <div className="col-md-9">
                                 <div className="row filtr-container">
                                     {blogs.data.map(blog => (
-                                        <div className="col-md-6 filtr-item" key={data._id} data-category={blog.categories}>
+                                        <div className="col-md-6 filtr-item" key={blog._id} data-category={blog.categories}>
                                             <div className="single-blog border mb-3" data-aos="fade-up">
                                                 <div className="blog-image">
-                                                    <a href="#"><Image src={"/uploads/"+blog.featured_image} alt="blog one" width={380} height={250} className="img-fluid" /></a>
+                                                    <Link href={"/blogs/"+blog.url}><a><Image src={"/uploads/"+blog.featured_image} alt="blog one" width={380} height={250} className="img-fluid" /></a></Link>
                                                 </div>
                                                 <div className="blog-content p-4">
-                                                    <h4 className="post-title"><a href="blogs/iot_blog.html">{blog.title}</a>
+                                                    <h4 className="post-title"><Link href={"/blogs/"+blog.url}><a>{blog.title}</a></Link>
                                                     </h4>
                                                     <div className="post-meta d-flex">
                                                         <div className="single-meta">
-                                                            <p><i className="fas fa-calendar-alt"></i> 29 April, 2019</p>
+                                                            <p><i className="fas fa-calendar-alt"></i> {format(new Date(blog.created_on), 'dd MMMM, yyyy')}</p>
                                                         </div>
                                                     </div>
-                                                    <p>{blog.content}</p>
-                                                    <a href="blogs/iot_blog.html" className="read-more-btn">Read More <i className="fa fa-angle-right"></i></a>
+                                                    <p>{`${blog.content.substring(0, 150)}...`}</p>
+                                                    <Link href={"/blogs/"+blog.url}><a className="read-more-btn">Read More <i className="fa fa-angle-right"></i></a></Link>
                                                 </div>
                                             </div>
                                         </div>
                                     ))}
-                                    <div className="col-md-6 filtr-item" data-category="1">
-                                        <div className="single-blog border mb-3" data-aos="fade-up">
-                                            <div className="blog-image">
-                                                <a href="#"><Image src="/images/blog/iot.png" alt="blog one" width={380} height={250} className="img-fluid" /></a>
-                                            </div>
-                                            <div className="blog-content p-4">
-                                                <h4 className="post-title"><a href="blogs/iot_blog.html">Internet of Things (Iot)</a>
-                                                </h4>
-                                                <div className="post-meta d-flex">
-                                                    <div className="single-meta">
-                                                        <p><i className="fas fa-calendar-alt"></i> 29 April, 2019</p>
-                                                    </div>
-                                                </div>
-                                                <p>These are web-empowered gadgets that utilize inserted processors, sensors and
-                                                    correspondence equipment to gather, send and follow up on information they
-                                                    secure from their surroundings.
-                                                </p>
-                                                <a href="blogs/iot_blog.html" className="read-more-btn">Read More <i
-                                                        className="fa fa-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <div className="col-md-6 filtr-item" data-category="2,4">
-                                        <div className="single-blog border" data-aos="fade-up">
-                                            <div className="blog-image">
-                                                <a href="#"><Image src="/images/new/Health-and-Wellness.jpg" alt="blog one" width={380} height={250} className="img-fluid" /></a>
-                                            </div>
-                                            <div className="blog-content p-4">
-                                                <h4 className="post-title"><a href="blogs/chatbot_hc_blog.html">Chatbots in
-                                                        healthcare</a>
-                                                </h4>
-                                                <div className="post-meta d-flex">
-                                                    <div className="single-meta">
-                                                        <p><i className="fas fa-calendar-alt"></i> 29 April, 2019</p>
-                                                    </div>
-                                                </div>
-                                                <p>With AI influencing all the sectors of our society Healthcare cannot remain
-                                                    untouched. With emerging digital trends such as wearables and Iot, AR and VR,
-                                                    Blockchain, telemedicine etc.
-                                                </p>
-                                                <a href="#" className="read-more-btn">Read More <i className="fa fa-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <div className="col-md-6 filtr-item" data-category="3,4">
-                                        <div className="single-blog border mb-3" data-aos="fade-up">
-                                            <div className="blog-image">
-                                                <a href="#"><Image src="/images/blog/machine-learning.png" alt="blog one" width={380} height={250} className="img-fluid" /></a>
-                                            </div>
-                                            <div className="blog-content p-4">
-                                                <h4 className="post-title"><a href="blogs/ml_blog.html">Machine learning implementation
-                                                        to Mobile Apps by
-                                                        TensorFlow</a></h4>
-                                                <div className="post-meta d-flex">
-                                                    <div className="single-meta">
-                                                        <p><i className="fas fa-calendar-alt"></i> 29 April, 2019</p>
-                                                    </div>
-                                                </div>
-                                                <p>Released in 2015 TensorFlow is an ecosystem that is used by the developers to
-                                                    develop and train deep learning models. It uses complex computations as graphs
-                                                    that make it easier for analysis of models and multi-dimensional arrays.
-                                                </p>
-                                                <a href="blogs/ml_blog.html" className="read-more-btn">Read More <i
-                                                        className="fa fa-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <div className="col-md-6 filtr-item" data-category="5,6">
-                                        <div className="single-blog border" data-aos="fade-up">
-                                            <div className="blog-image">
-                                                <a href="#"><Image src="/images/blog/mobile-commerce.png" alt="blog one" width={380} height={250} className="img-fluid" /></a>
-                                            </div>
-                                            <div className="blog-content p-4">
-                                                <h4 className="post-title"><a href="blogs/trends_blog.html">Best ongoing Mobile
-                                                        Application trends</a>
-                                                </h4>
-                                                <div className="post-meta d-flex">
-                                                    <div className="single-meta">
-                                                        <p><i className="fas fa-calendar-alt"></i> 29 April, 2019</p>
-                                                    </div>
-                                                </div>
-                                                <p>The number of Smartphone users worldwide, crossed 5.135 billion. With this ever
-                                                    so increasing Mobile usability, the mobile applications are in high demand. No
-                                                    business can boom without a properly organized and user friendly application of
-                                                    their platform.
-                                                </p>
-                                                <a href="#" className="read-more-btn">Read More <i className="fa fa-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <div className="col-md-6 filtr-item" data-category="5,6">
-                                        <div className="single-blog border " data-aos="fade-up">
-                                            <div className="blog-image">
-                                                <a href="#"><Image src="/images/blog/cross.png" alt="blog one" width={380} height={250} className="img-fluid" /></a>
-                                            </div>
-                                            <div className="blog-content p-4">
-                                                <h4 className="post-title"><a href="blogs/crossPlatform_blog.html">CROSS PLATFORM APP
-                                                        FRAMEWORKS</a>
-                                                </h4>
-                                                <div className="post-meta d-flex">
-                                                    <div className="single-meta">
-                                                        <p><i className="fas fa-calendar-alt"></i> 29 April, 2019</p>
-                                                    </div>
-                                                </div>
-                                                <p>Cross platform app frameworks refer to a kind of software development that helps
-                                                    the developers to create applications that are compatible to many such as Ios
-                                                    and Androids. It requires preparing the code once and then using it on any
-                                                    platform.
-                                                </p>
-                                                <a href="#" className="read-more-btn">Read More <i className="fa fa-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
+                                    
                                 </div>
                             </div>
                             <div className="col-md-3">
@@ -196,11 +84,9 @@ export default function BlogPage(props) {
                                             <ul className="category-list">
                                                 <ul className="list-wraper">
                                                     <li className="active" data-filter="all">All</li>
-                                                    <li data-filter="1">IOT</li>
-                                                    <li data-filter="2">Chatbot</li>
-                                                    <li data-filter="3">Machine Learning</li>
-                                                    <li data-filter="4">Health Care & Fitness</li>
-                                                    <li data-filter="5">Trends</li>
+                                                    {blogsCategories.data.map(category => (
+                                                        <li data-filter={category._id} key={category._id}>{category.name}</li>
+                                                    ))}
                                                 </ul>
                                             </ul>
                                         </div>

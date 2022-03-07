@@ -107,4 +107,16 @@ router.delete('/:id', authentication, async (req, res) => {
     });
 });
 
+
+// Get Front Reviews
+router.get('/front/list', async (req, res) => {
+    
+    let reviews = await Reviews.find();
+    
+    res.json({
+        "success": true,
+        "data": reviews
+    });
+});
+
 module.exports = router;

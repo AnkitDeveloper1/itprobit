@@ -55,7 +55,7 @@ export default function Projects() {
                 </div>
                 <div className="row pb-5">
                     <div className="col-md-12 mx-auto text-center">
-                        <a className="ta-button mt-2 openForm" href="portfolio.html">Know More</a>
+                        <a className="ta-button mt-2 openForm" href="#">Know More</a>
                     </div>
                 </div>
             </div>

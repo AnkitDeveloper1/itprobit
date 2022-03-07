@@ -82,14 +82,14 @@ export default function FooterLayout(props) {
                                 <h4>Services</h4>
                                 <div className="md-separator-sml separatorBorderColor"></div>
                                 <ul className="widget-list">
-                                    <li><a href="testing/web-testing.html">Web Testing</a></li>
-                                    <li><a href="services/enterprise-dev.html"> Enterprise Application</a></li>
-                                    <li><a href="services/mobile-dev.html"> Mobile App Development</a></li>
-                                    <li><a href="services/iot-dev.html"> IOT Developement</a> </li>
-                                    <li><a href="services/blockchain-dev.html"> Blockchain Development</a></li>
-                                    <li><a href="services/iot-dev.html#arvr"> AR/VR Development</a></li>
-                                    <li><a href="services.html#chatbot"> ChatBot Development</a></li>
-                                    <li><a href="services.html#chatbot"> ECommerce Business Solutions</a></li>                                
+                                    <li><a href="#">Web Testing</a></li>
+                                    <li><a href="#"> Enterprise Application</a></li>
+                                    <li><a href="#"> Mobile App Development</a></li>
+                                    <li><a href="#"> IOT Developement</a> </li>
+                                    <li><a href="#"> Blockchain Development</a></li>
+                                    <li><a href="#"> AR/VR Development</a></li>
+                                    <li><a href="#"> ChatBot Development</a></li>
+                                    <li><a href="#"> ECommerce Business Solutions</a></li>                                
                                 </ul>
 
                             </div>
@@ -99,14 +99,14 @@ export default function FooterLayout(props) {
                                 <h4>Useful Links</h4>
                                 <div className="md-separator-sm separatorBorderColor"></div>
                                 <ul className="widget-list">                               
-                                    <li><a  href="testing/mobile.html">Mobile Testing</a></li>
-                                    <li><a href="industries/mobility-ind.html">Mobility Solutions</a></li>
-                                    <li><a href="industries/finance-accounting.html">Financial &#38; Accounting</a></li>
-                                    <li><a href="industries/food-beverages.html">Food &#38; Beverages</a></li>
-                                    <li><a href="industries/healthcare-fitness.html">Healthcare &#38; Fitness</a></li>
-                                    <li><a href="industries/retail-ecommerce.html">Retail &#38; E-commerce</a></li>
-                                    <li><a href="industries/travel-hospitality.html">Travel &#38; Hospitality</a></li>
-                                    <li><a href="industries/lifestyle-entertainment.html">Lifestyle &#38; Entertainment</a></li>
+                                    <li><a href="#">Mobile Testing</a></li>
+                                    <li><a href="#">Mobility Solutions</a></li>
+                                    <li><a href="#">Financial &#38; Accounting</a></li>
+                                    <li><a href="#">Food &#38; Beverages</a></li>
+                                    <li><a href="#">Healthcare &#38; Fitness</a></li>
+                                    <li><a href="#">Retail &#38; E-commerce</a></li>
+                                    <li><a href="#">Travel &#38; Hospitality</a></li>
+                                    <li><a href="#">Lifestyle &#38; Entertainment</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -136,7 +136,7 @@ export default function FooterLayout(props) {
                     <div className="row">
                         <div className="col-md-3"></div>
                         <div className="col-md-9 home-footer-logo-img" style={{display:'flex'}}>
-                            <a href="index-2.html"><Image src="/images/it-orbit-logo.png" alt="logo" width={150} height={40} /> </a>
+                            <a href="#"><Image src="/images/it-orbit-logo.png" alt="logo" width={150} height={40} /> </a>
 
                             <div className="copyright-text text-white pt-3">
                                 <p>Copyright 2017 @ ItProBit. All rights reserved.</p>

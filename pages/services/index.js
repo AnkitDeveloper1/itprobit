@@ -126,7 +126,7 @@ export default function ServicesPage(props) {
                                 </div>
                             </div>
 
-                            <a href="services/mobile-dev.html" className="btn mob-cod-btn">Know More</a>
+                            <a href="#" className="btn mob-cod-btn">Know More</a>
                         </div>
                         <hr />
                         <div id="iOSAppDevelopment" className="sec-stack second-stack">
@@ -182,7 +182,7 @@ export default function ServicesPage(props) {
                                     </ul>
                                 </div>
                             </div>
-                            <a href="services/mobile-dev.html" className="btn mob-cod-btn mt-3">Know More</a>
+                            <a href="#" className="btn mob-cod-btn mt-3">Know More</a>
                         </div>
                         <hr />
                         <div id="webDevelopment" className="sec-stack third-stack">
@@ -238,7 +238,7 @@ export default function ServicesPage(props) {
                                     </ul>
                                 </div>
                             </div>
-                            <a href="services/enterprise-dev.html" className="btn mob-cod-btn mt-3">Know More</a>
+                            <a href="#" className="btn mob-cod-btn mt-3">Know More</a>
                         </div>
                         <hr />
                         <div id="crossPlaformDevelopment" className="sec-stack fourth-stack">
@@ -412,7 +412,7 @@ export default function ServicesPage(props) {
                                     </ul>
                                 </div>
                             </div>
-                            <a href="services/iot-dev.html" className="btn mob-cod-btn mt-3">Know More</a>
+                            <a href="#" className="btn mob-cod-btn mt-3">Know More</a>
                         </div>
                         <hr />
                         <div id="blockchain" className="sec-stack eighth-sec">
@@ -471,7 +471,7 @@ export default function ServicesPage(props) {
                                     </ul>
                                 </div>
                             </div>
-                            <a href="services/blockchain-dev.html" className="btn mob-cod-btn mt-3">Know More</a>
+                            <a href="#" className="btn mob-cod-btn mt-3">Know More</a>
                         </div>
                         <hr />
                         <div id="rubyonRailsDevelopment" className="sec-stack ninth-sec">
@@ -531,7 +531,7 @@ export default function ServicesPage(props) {
                                     </ul>
                                 </div>
                             </div>
-                            <a href="services/iot-dev.html" className="btn mob-cod-btn mt-3">Know More</a>
+                            <a href="#" className="btn mob-cod-btn mt-3">Know More</a>
                         </div>
                         <hr />
                         <div id="iBeacon" className="sec-stack eleventh-sec">
